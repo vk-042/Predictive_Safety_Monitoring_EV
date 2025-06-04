@@ -1,6 +1,6 @@
 Predictive Safety Monitoring for EV Systems – Work Notes
 
-Day 1 – Project Setup & Visualization:
+Project Setup & Visualization:
 
 - Created project folder with structure (data, scripts, models, etc.)
 - Collected or simulated EV sensor data (temperature, vibration, voltage, etc.)
@@ -11,7 +11,7 @@ Day 1 – Project Setup & Visualization:
     • Normal vs Faulty status count
 - Saved data in ev_sensors.csv and confirmed graphs rendered successfully
 
-Day 2 – Train ML Model (Anomaly Detection):
+Train ML Model (Anomaly Detection):
 
 - Used StandardScaler to standardize all sensor features
 - Trained an Isolation Forest model to detect anomalies (no labels used)
@@ -19,14 +19,13 @@ Day 2 – Train ML Model (Anomaly Detection):
 - Added the anomaly column and saved to ev_sensors_with_anomaly.csv
 - Saved the trained model and scaler using joblib for later use
 
-Day 3 – Alert Logic & Tagging:
+Alert Logic & Tagging:
 
 - Loaded model output and applied custom rule-based logic
 - Assigned alert levels: Safe, Warning, Critical based on thresholds
 - Saved full dataset with alert_level to ev_sensors_alerts.csv
 - Created bar chart using Seaborn (visualize_alerts.py) to show alert level distribution
 
-Day - 4
 
 1. Set up Streamlit Dashboard:
    - Created `dashboard.py` using Streamlit to visualize sensor data and anomaly predictions.
