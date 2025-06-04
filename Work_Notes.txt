@@ -1,0 +1,54 @@
+Predictive Safety Monitoring for EV Systems – Work Notes
+
+Day 1 – Project Setup & Visualization:
+
+- Created project folder with structure (data, scripts, models, etc.)
+- Collected or simulated EV sensor data (temperature, vibration, voltage, etc.)
+- Wrote a script (visualize_data.py) to visualize:
+    • Temperature over time
+    • Vibration over time
+    • Voltage over time
+    • Normal vs Faulty status count
+- Saved data in ev_sensors.csv and confirmed graphs rendered successfully
+
+Day 2 – Train ML Model (Anomaly Detection):
+
+- Used StandardScaler to standardize all sensor features
+- Trained an Isolation Forest model to detect anomalies (no labels used)
+- Model predicted 1 = Normal, -1 = Anomaly (500 anomalies detected out of 10,000)
+- Added the anomaly column and saved to ev_sensors_with_anomaly.csv
+- Saved the trained model and scaler using joblib for later use
+
+Day 3 – Alert Logic & Tagging:
+
+- Loaded model output and applied custom rule-based logic
+- Assigned alert levels: Safe, Warning, Critical based on thresholds
+- Saved full dataset with alert_level to ev_sensors_alerts.csv
+- Created bar chart using Seaborn (visualize_alerts.py) to show alert level distribution
+
+Day - 4
+
+1. Set up Streamlit Dashboard:
+   - Created `dashboard.py` using Streamlit to visualize sensor data and anomaly predictions.
+ 
+2. Displayed Sensor Graphs:
+   - Bar chart showing distribution of alerts (Safe, Warning, Critical).
+   - Pie chart showing percentage of each alert level.
+   - Temperature and Vibration trends plotted side-by-side.
+
+3. Displayed Current Status:
+   - Used sensor values and alert levels to indicate system health in real-time.
+
+4. Displayed Model Predictions:
+   - Anomalies detected using Isolation Forest were labeled and shown alongside sensor data.
+
+5. Added User Controls :
+   - `multiselect` for filtering by multiple alert levels.
+   - `slider` to set temperature range filter.
+   - `download_button` to export filtered data as CSV.
+
+
+
+
+
+
