@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.title(" Predictive Safety Monitoring for EV Dashboard")
 
-df = pd.read_csv('D:\Predictive_Safety_Monitoring_EV\data\ev_sensors_alerts.csv')
+df = pd.read_csv('data/ev_sensors_alerts.csv')
 
 # Sidebar filters
 st.sidebar.header("Filter by Alert Level")
